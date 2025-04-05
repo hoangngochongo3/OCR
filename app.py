@@ -45,7 +45,7 @@ def perform_ocr(img_path, mode="text"):
         return None
 
 
-st.title("🧠 OCR App sử dụng API")
+st.title("🧠 OCR VietNamese Images")
 option = st.radio("Chọn nguồn ảnh:", ["📂 Ảnh từ máy tính", "🌐 Ảnh từ URL"])
 
 task_option = st.selectbox("📌 Chọn loại trích xuất:", ["🔤 Trích xuất văn bản", "🧾 Trích xuất hóa đơn"])
