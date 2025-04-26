@@ -60,8 +60,8 @@ ocr_mode = "bill" if "hóa đơn" in task_option else "text"
 if option == "📂 Ảnh / PDF từ máy tính":
     uploaded_file = st.file_uploader("Chọn ảnh hoặc PDF", type=["png", "jpg", "jpeg", "pdf"])
     if uploaded_file:
-        file_type = uploaded_file.type
-        if file_type == "application/pdf":
+        file_ext = uploaded_file.name.lower().split('.')[-1]
+        if file_ext == "pdf":
             images = pdf_to_images(uploaded_file.read())
             for i, image in enumerate(images):
                 st.image(image, caption=f"Trang {i+1}", use_column_width=True)
