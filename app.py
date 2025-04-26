@@ -65,11 +65,12 @@ if option == "📂 Ảnh / PDF từ máy tính":
             images = pdf_to_images(uploaded_file.read())
             for i, image in enumerate(images):
                 st.image(image, caption=f"Trang {i+1}", use_column_width=True)
-                if st.button(f"🔍 OCR Trang {i+1}", key=i):
-                    result = perform_ocr(image, mode=ocr_mode)
-                    if result:
-                        st.success(f"✅ Kết quả trang {i+1}:")
-                        st.text(result)
+            if st.button(f"🔍 OCR Trang {i+1}", key=i):
+            for i,image in enumerate(images): 
+                result = perform_ocr(image, mode=ocr_mode)
+                if result:
+                    st.success(f"✅ Kết quả trang {i+1}:")
+                    st.text(result)
         else:
             image = Image.open(uploaded_file)
             st.image(image, caption="Ảnh đã tải", use_column_width=True)
