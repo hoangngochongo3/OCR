@@ -1,4 +1,4 @@
-pdf2image
+PyMuPDF
 streamlit
 requests
 Pillow
